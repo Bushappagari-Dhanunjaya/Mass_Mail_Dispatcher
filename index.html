@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/1ade4f5b7b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <div class="navbar">
+        <p id="head">Mass Mail Dispatcher</p>
+    </div><br><br><br><br>
+    <div class="bg-container">
+        <div class="upload-section">
+          <p>UPLOAD YOUR CSV FILE HERE</p>
+          <input type="file" id="upload" accept="text/csv">
+        </div>
+
+
+        <div class="form-section">
+            <div class="container">
+                <h2>Send Mail</h2>
+                <form onsubmit="sendEachMail(); reset(); return false;">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="subject" name="subject" required>
+                    <label for="ebody">Body</label>
+                    <textarea name="" id="ebody" cols="41" rows="6"></textarea>
+                    <button type="submit" class="btn">Send <i class="fa-solid fa-arrow-right" id="right-arrow"></i></button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <br><br>
+
+
+    <div>
+        <h2 style="margin-left: 20px;">Valid and Invalid Emails List >></h2>
+        <div class="tables">
+            <div class="valTab">
+                <table id="val">
+                <tr>
+                    <td>
+                        <h2>Valid Emails : <span id="valCount"> </span> </h2>
+                    </td>
+                </tr>
+    
+                </table>
+            </div>
+            <div class="invalTab">
+                <table id="inval">
+                    <tr><td>
+                        <h2>Invalid Emails : <span id="invalCount"></span></h2>
+                        
+                    </td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script src="index.js"></script>
+</html>
